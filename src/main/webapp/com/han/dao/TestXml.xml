@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.han.dao.TestXml">
+    <select id="foo" parameterMap="Blog" resultType="Blog">
+        select * from t_blog where 1 = 1
+        <if test="title != null">
+            and title = #{title}
+        </if>
+        <if test="content != null">
+            and content = #{content}
+        </if>
+        <if test="owner != null">
+        and owner = #{owner}
+    </if>
+    </select>
+
+    <select id="bar" resultType="Blog">
+        select * from t_blog where id in
+        <foreach collection="array" index="index"
+            item = "item" open ="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+</mapper>
