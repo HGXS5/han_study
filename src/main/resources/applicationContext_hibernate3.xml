@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+           http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+    <!--配置由Spring IOC容器托管的对象对应的被注解的类所在的包-->
+    <context:component-scan base-package="com.han"/>
+    <!--    配置通过自动生成代理实现AOP功能-->
+    <aop:aspectj-autoproxy/>
+    <!--    配置数据库连接池 DBCP-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <!-- 配置驱动程序类 -->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <!-- 配置连接数据库的URL -->
+        <property name="url" value="jdbc:mysql://localhost:3306/myweb"/>
+        <!-- 配置访问数据库的用户名 -->
+        <property name="username" value="root"/>
+        <!-- 配置访问数据库的口令 -->
+        <property name="password" value="123456"/>
+        <!-- 配置最大连接数 -->
+        <property name="maxActive" value="150"/>
+        <!-- 配置最小空闲连接数 -->
+        <property name="minIdle" value="5"/>
+        <!-- 配置最大空闲连接数 -->
+        <property name="maxIdle" value="20"/>
+        <!-- 配置初始连接数 -->
+        <property name="initialSize" value="10"/>
+        <!-- 配置连接被泄露时是否生成日志 -->
+        <property name="logAbandoned" value="true"/>
+        <!-- 配置是否删除超时连接 -->
+        <property name="removeAbandoned" value="true"/>
+        <!-- 配置删除超时连接的超时门限值(以秒为单位) -->
+        <property name="removeAbandonedTimeout" value="120"/>
+        <!-- 配置超时等待时间(以毫秒为单位) -->
+        <property name="maxWait" value="5000"/>
+        <!-- 配置空闲连接回收器线程运行的时间间隔(以毫秒为单位) -->
+        <property name="timeBetweenEvictionRunsMillis" value="300000"/>
+        <!-- 配置连接空闲多长时间后(以毫秒为单位)被断开连接 -->
+        <property name="minEvictableIdleTimeMillis" value="60000"/>
+    </bean>
+    <!-- 配置Spring提供的支持注解ORM映射的Hibernate会话工厂 -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <!-- 通过setter注入数据源属性 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 配置实体类所在的包 -->
+        <property name="packagesToScan" value="com.han.entity"/>
+        <!-- 配置Hibernate的相关属性 -->
+        <property name="hibernateProperties">
+            <!-- 在项目调试完成后要删除show_sql和format_sql属性否则对性能有显著影响 -->
+            <value>
+                hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+            </value>
+        </property>
+    </bean>
+    <!-- 配置Spring提供的Hibernate事务管理器 -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <!-- 通过setter注入Hibernate会话工厂 -->
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!-- 配置基于注解配置声明式事务 -->
+    <tx:annotation-driven/>
+</beans>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.han.dao.TestXml">
+<mapper namespace="com.han.entity.TestXml">
     <select id="foo" parameterMap="Blog" resultType="Blog">
         select * from t_blog where 1 = 1
         <if test="title != null">
