@@ -24,6 +24,7 @@ public interface BaseDao<E,K extends Serializable> {
      * @param entity 业务实体对象
      */
     public void delete(E entity);
+
     /**
      * 根据ID删除
      * @param id 业务实体对象的标识
