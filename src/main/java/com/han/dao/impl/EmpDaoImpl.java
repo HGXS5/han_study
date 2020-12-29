@@ -1,4 +1,4 @@
-﻿package com.han.dao;
+﻿package com.han.dao.impl;
 
 import com.han.dao.EmpDao;
 import com.han.entity.Emp;
