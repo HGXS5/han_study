@@ -11,6 +11,20 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <!--用Spring MVC在web.xml配置-->
+    <servlet>
+        <servlet-name>example</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>example</servlet-name>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
+
     <!--配置Spring的OpenSessionInView过滤器来解决延迟加载和Hibernate会话关闭的矛盾-->
     <filter>
         <filter-name>openSessionInView</filter-name>
@@ -47,11 +61,12 @@
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
-        <login-config>
-            <auth-method>BASIC</auth-method>
-        </login-config>
-        <security-role>
-            <role-name>admin</role-name>
-        </security-role>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
 
-    </web-app>
+
+</web-app>
