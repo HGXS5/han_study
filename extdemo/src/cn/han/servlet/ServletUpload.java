@@ -17,9 +17,10 @@ public class ServletUpload extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        req.setCharacterEncoding("gbk");
         ZipFileDemo zfd = new ZipFileDemo();
         File file = zfd.uploadTest(req);
-        if (file.exists()){
+        if (file.exists()) {
             System.out.println(file.getName());
         }
 

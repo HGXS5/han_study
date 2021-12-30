@@ -19,12 +19,16 @@ import java.util.zip.ZipFile;
 
 public class ZipFileDemo {
     public static void main(String[] args) {
+        String uploadPath = "D:\\han\\upload\\";
+        System.out.println(uploadPath);
     }
 
      public File uploadTest(HttpServletRequest request){
-        String uploadPath = "D:\\han\\upload\\";
+         String separator = File.separator;
+         String uploadPath = "D:\\han\\upload\\";
+         File fileUpload = null;
         File uploadPathF = new File(uploadPath);
-        if (!uploadPathF.exists()&&uploadPathF.isDirectory()){
+        if (!uploadPathF.exists()){
             uploadPathF.mkdirs();
         }
         try {
@@ -39,9 +43,12 @@ public class ZipFileDemo {
             Iterator<FileItem> iterator = fileItems.iterator();
             while(iterator.hasNext()){
                 FileItem item = iterator.next();
-                item.write(uploadPathF);
+                if (!item.isFormField()){
+                    fileUpload = new File(uploadPath + item.getName());
+                    item.write(fileUpload);
+                }
             }
-            return uploadPathF;
+            return fileUpload;
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
