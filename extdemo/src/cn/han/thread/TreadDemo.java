@@ -30,6 +30,7 @@ public class TreadDemo {
             tn.start();//首先向cpu申请内存，申请成功后才会运行run方法
 
         }
+
 //        threadPools();
     }
 

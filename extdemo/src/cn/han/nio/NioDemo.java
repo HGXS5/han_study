@@ -1,5 +1,6 @@
 package cn.han.nio;
 
+import com.sun.javafx.scene.control.GlobalMenuAdapter;
 import javafx.scene.input.DataFormat;
 import sun.misc.VM;
 
@@ -8,10 +9,11 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Properties;
 
 public class NioDemo {
     public static void main(String[] args) {
-        simpleBuffer();
+        fileDirTwo();
     }
 
     /**
@@ -134,14 +136,14 @@ public class NioDemo {
             System.out.println(filefi.getCanonicalPath());
             fi = new FileInputStream(filefi);
             fo = new FileOutputStream(filefo);
-            ir = new InputStreamReader(fi,"gbk");
+            ir = new InputStreamReader(fi, "gbk");
             br = new BufferedReader(ir);
 
-            ow = new OutputStreamWriter(fo,"gbk");
+            ow = new OutputStreamWriter(fo, "gbk");
             bw = new BufferedWriter(ow);
             //
-            int read ;
-            while ((read=br.read())!=-1){
+            int read;
+            while ((read = br.read()) != -1) {
                 bw.write(read);
             }
             bw.flush();
@@ -168,5 +170,50 @@ public class NioDemo {
             }
         }
 
+    }
+
+    static void fileDir() {
+        InputStreamReader ir = null;
+        BufferedReader br = null;
+        File f = new File("test.properties");
+
+        try {
+            if (!f.exists()){
+                f.createNewFile();
+            }
+            ir = new InputStreamReader(new FileInputStream("test.properties"));
+            br = new BufferedReader(ir);
+            Properties p = new Properties();
+            p.load(br);
+            System.out.println(p.getProperty("h_test"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ir!=null){
+                    ir.close();
+                }
+                if (br!=null){
+                    br.close();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+    }
+
+    static void fileDirTwo(){
+        Properties p = new Properties();
+        try {
+            InputStream resourceAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.properties");
+            p.load(resourceAsStream);
+            System.out.println(p.getProperty("h_test"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
