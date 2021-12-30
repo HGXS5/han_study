@@ -19,11 +19,9 @@ import java.util.zip.ZipFile;
 
 public class ZipFileDemo {
     public static void main(String[] args) {
-        zipFileTest();
-
     }
 
-    static File uploadTest(HttpServletRequest request){
+     public File uploadTest(HttpServletRequest request){
         String uploadPath = "D:\\han\\upload\\";
         File uploadPathF = new File(uploadPath);
         if (!uploadPathF.exists()&&uploadPathF.isDirectory()){
@@ -50,7 +48,7 @@ public class ZipFileDemo {
         }
         return null;
     }
-    static void zipFileTest(){
+     void zipFileTest(){
         String zipFilePath = "C:\\Users\\dell\\Downloads\\commons-io-2.11.0-bin.zip";
         String path = "D:\\han\\zipFile\\";
 
