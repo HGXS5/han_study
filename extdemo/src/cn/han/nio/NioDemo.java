@@ -1,5 +1,9 @@
 package cn.han.nio;
 
+import cn.han.pojo.Apples;
+import cn.han.pojo.Book;
+import cn.han.pojo.Person;
+import cn.han.regx.RegexDemo;
 import com.sun.javafx.scene.control.GlobalMenuAdapter;
 import javafx.scene.input.DataFormat;
 import sun.misc.VM;
@@ -13,8 +17,23 @@ import java.util.Properties;
 
 public class NioDemo {
     public static void main(String[] args) {
-        fileDirTwo();
+        test();
     }
+
+   static void test() {
+       Person p1 = new Person("小米", 30, new Book("天堂", 30), new Apples("iphone4", 3000));
+
+       try {
+           //Person clone = (Person) p1.clone();
+           Person clone = (Person) serializableDemo(p1);
+           Book book = clone.getBook();
+           book.setName("地狱");
+           System.out.println(p1.getBook().getName());
+           System.out.println(clone.getBook().getName());
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+   }
 
     /**
      * nio将通道数据读取到缓存区
@@ -178,7 +197,7 @@ public class NioDemo {
         File f = new File("test.properties");
 
         try {
-            if (!f.exists()){
+            if (!f.exists()) {
                 f.createNewFile();
             }
             ir = new InputStreamReader(new FileInputStream("test.properties"));
@@ -191,10 +210,10 @@ public class NioDemo {
             e.printStackTrace();
         } finally {
             try {
-                if (ir!=null){
+                if (ir != null) {
                     ir.close();
                 }
-                if (br!=null){
+                if (br != null) {
                     br.close();
                 }
 
@@ -206,7 +225,7 @@ public class NioDemo {
 
     }
 
-    static void fileDirTwo(){
+    static void fileDirTwo() {
         Properties p = new Properties();
         try {
             InputStream resourceAsStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("test.properties");
@@ -215,5 +234,22 @@ public class NioDemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 深克隆
+     *
+     * @param <T>
+     * @param o
+     * @return
+     * @throws IOException
+     */
+    static <T extends Serializable> T serializableDemo(T o) throws Exception {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream obs = new ObjectOutputStream(bos);
+        obs.writeObject(o);
+        ByteArrayInputStream bout = new ByteArrayInputStream(bos.toByteArray());
+        ObjectInputStream ois = new ObjectInputStream(bout);
+        return (T) ois.readObject();
     }
 }

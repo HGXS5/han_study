@@ -2,13 +2,14 @@ package cn.han.regx;
 
 import jdk.nashorn.internal.ir.CallNode;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexDemo {
+public class RegexDemo implements Serializable {
     public static void main(String[] args) {
         String str = "a123|qsfdfd_12345_k 5";
         String regex ="//^//";
@@ -22,8 +23,6 @@ public class RegexDemo {
             String group = matcher.group();
             System.out.println(group);
         }
-
-
-
     }
+
 }
