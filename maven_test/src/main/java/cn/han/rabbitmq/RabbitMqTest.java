@@ -1,6 +1,7 @@
 package cn.han.rabbitmq;
 
 import com.rabbitmq.client.*;
+import jdk.nashorn.internal.ir.CallNode;
 
 import java.io.IOException;
 import java.util.Map;
@@ -12,30 +13,32 @@ public class RabbitMqTest {
     public static void main(String[] args) {
         try {
 //            deleteQueueNode("1111");
-            customerTest("han");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
+//            customerTest("queueOne0");
+//            for (int i = 0; i <5 ; i++) {
+//                producerTest(1);
+//            }
+            producerTest(1);
+//            for (int i = 0; i <3 ; i++) {
+//                test();
+//            }
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     static void test() {
-        //生产者线程
-        new Thread() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 5; i++) {
-                    //生产者
+            new Thread() {
+                @Override
+                public void run() {
                     try {
-                        producerTest(i);
+                        customerTest("queueOne2");
                         Thread.sleep(1000 * 10);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
-            }
-        }.start();
+            }.start();
     }
 
     static void deleteQueueNode(String name) throws IOException, TimeoutException {
@@ -50,11 +53,12 @@ public class RabbitMqTest {
 
     }
 
-    static void producerTest(int i) throws IOException, TimeoutException {
+    static void producerTest(int i) throws Exception{
         //队列名称
-        final String QUEUE_NAME = "queueOne" + i;
+        final String QUEUE_NAME = "queue_han";
         //创建连接工厂，host默认是localhost
         ConnectionFactory cf = new ConnectionFactory();
+
         //创建一个连接
         Connection connection = cf.newConnection();
         //创建一个通道
@@ -70,16 +74,20 @@ public class RabbitMqTest {
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
 
         //创建一个消息
-        String msg = "hello" + i;
-        /*
-         * 发送消息队列
-         * 1.第一个参数为交换机名称
-         * 2.第二个参数为队列的映射路由key
-         * 3.第三个参数为消息其他属性
-         * 4.第四个参数为发送消息主体
-         * */
-        channel.basicPublish("", QUEUE_NAME, null, msg.getBytes("utf-8"));
-        System.out.println("发送消息：" + msg.getBytes("utf-8"));
+        for (int j = 0; j <10 ; j++) {
+            String msg = "hello" + j;
+            /*
+             * 发送消息队列
+             * 1.第一个参数为交换机名称
+             * 2.第二个参数为队列的映射路由key
+             * 3.第三个参数为消息其他属性
+             * 4.第四个参数为发送消息主体
+             * */
+            channel.basicPublish("", QUEUE_NAME, null, msg.getBytes("utf-8"));
+            System.out.println("发送消息：" + msg.getBytes("utf-8"));
+            Thread.sleep(1000*3);
+        }
+
         channel.close();
         connection.close();
     }
@@ -114,9 +122,16 @@ public class RabbitMqTest {
         //自动回复队列应答
         channel.basicConsume(QUEUE_NAME, true, defaultConsumer);
 
-        channel.close();
-        connection.close();
-    }
 
+    }
+    /*
+    * 获取通道
+    * */
+    static  Connection getConnection() throws IOException, TimeoutException {
+        ConnectionFactory factory = new ConnectionFactory();
+
+
+        return factory.newConnection();
+    }
 
 }
