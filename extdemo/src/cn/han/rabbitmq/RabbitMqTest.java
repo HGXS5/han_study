@@ -9,9 +9,7 @@ public class RabbitMqTest {
     public static void main(String[] args) {
         try {
             producerTest();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
