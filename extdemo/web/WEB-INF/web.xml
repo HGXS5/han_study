@@ -3,7 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    <filter>
+        <filter-name>filterdemo</filter-name>
+        <filter-class>cn.han.filter.FilterDemo</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>filterdemo</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>uploadName</servlet-name>
         <servlet-class>cn.han.servlet.ServletUpload</servlet-class>

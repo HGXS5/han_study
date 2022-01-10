@@ -43,10 +43,13 @@ public class ZipFileDemo {
             Iterator<FileItem> iterator = fileItems.iterator();
             while(iterator.hasNext()){
                 FileItem item = iterator.next();
-                if (!item.isFormField()){
-                    fileUpload = new File(uploadPath + item.getName());
-                    item.write(fileUpload);
+                if (!item.getName().isEmpty()){
+                    if (!item.isFormField()){
+                        fileUpload = new File(uploadPath + item.getName());
+                        item.write(fileUpload);
+                    }
                 }
+
             }
             return fileUpload;
         } catch (Exception e) {
