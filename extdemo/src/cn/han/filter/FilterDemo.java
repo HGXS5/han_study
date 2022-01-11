@@ -11,7 +11,7 @@ public class FilterDemo implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println(servletRequest.getRemoteAddr());
+        System.out.println(servletRequest.getRemoteHost()+servletRequest.getRemoteAddr());
     }
 
     @Override
