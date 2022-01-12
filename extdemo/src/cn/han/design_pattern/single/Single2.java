@@ -1,5 +1,8 @@
 package cn.han.design_pattern.single;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * 饿汉式
  * 优点：线程安全
