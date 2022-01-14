@@ -32,11 +32,12 @@ public class ThreadMq {
             while (true) {
                 try {
                     ConnectionFactory cf = new ConnectionFactory();//创建连接工厂
+                    cf.setHost("47.100.77.11");
                     Connection connection = cf.newConnection();//创建连接
                     Channel channel = connection.createChannel();//创建通道
                     AMQP.Queue.DeclareOk declareOk = channel.queueDeclare();
                     int messageCount = declareOk.getMessageCount();//获取队列中消息数量
-
+                    System.out.println(messageCount);
                     DefaultConsumer df = new DefaultConsumer(channel) {//创建消费端对象
                         @Override
                         public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {

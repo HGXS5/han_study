@@ -10,7 +10,7 @@ public class RabbitMqTest {
         try {
             producerTest();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());;
         }
     }
 
@@ -23,7 +23,14 @@ public class RabbitMqTest {
         //队列名称
         final String QUEUE_NAME = "queueOne";
         //创建连接工厂，host默认是localhost
-        ConnectionFactory cf = new ConnectionFactory();
+        ConnectionFactory cf = null;
+        try {
+            cf =  new ConnectionFactory();
+            cf.setHost("47.100.77.11");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
         //创建一个连接
         Connection connection = cf.newConnection();
         //创建一个通道

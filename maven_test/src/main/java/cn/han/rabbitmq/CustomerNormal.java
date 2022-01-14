@@ -16,6 +16,7 @@ public class CustomerNormal {
 
     public void customerTest() throws Exception {
         ConnectionFactory cf = new ConnectionFactory();//创建连接工厂
+        cf.setHost("47.100.77.11");
         Connection connection = cf.newConnection();//创建连接
         Channel channel = connection.createChannel();//创建通道
 

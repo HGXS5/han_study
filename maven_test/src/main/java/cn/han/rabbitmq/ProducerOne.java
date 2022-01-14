@@ -14,12 +14,14 @@ public class ProducerOne {
     public static void main(String[] args) throws Exception {
         final String QUEUE_NAME = "queue_han";
             ConnectionFactory cf = new ConnectionFactory();
+            cf.setHost("47.100.77.11");
+
             Connection connection = cf.newConnection();
             Channel channel = connection.createChannel();
 
            //声明队列
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            for (int i = 0; i <12 ; i++) {
+            for (int i = 0; i <6 ; i++) {
                 //信息
                 String s = "hello"+i;
                 //将信息发送到队列
