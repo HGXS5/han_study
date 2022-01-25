@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:33:40 CST 2022
+#Thu Jan 20 11:04:47 CST 2022
 jboss-logging-3.3.2.Final.jar>alimaven=
 jboss-logging-3.3.2.Final.pom>alimaven=
+jboss-logging-3.3.2.Final-sources.jar>alimaven=

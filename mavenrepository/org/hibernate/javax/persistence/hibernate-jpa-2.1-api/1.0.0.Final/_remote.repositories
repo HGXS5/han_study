@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:34:22 CST 2022
+#Thu Jan 20 11:04:01 CST 2022
 hibernate-jpa-2.1-api-1.0.0.Final.pom>alimaven=
 hibernate-jpa-2.1-api-1.0.0.Final.jar>alimaven=
+hibernate-jpa-2.1-api-1.0.0.Final-sources.jar>alimaven=

@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:34:22 CST 2022
+#Thu Jan 20 11:03:56 CST 2022
+mongo-java-driver-3.6.3-sources.jar>alimaven=
 mongo-java-driver-3.6.3.pom>alimaven=
 mongo-java-driver-3.6.3.jar>alimaven=

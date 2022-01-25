@@ -1,10 +1,25 @@
 package cn.han.pojo;
 
+import cn.han.annotation.Logtype;
+
+import cn.han.annotation.TestAnnotation;
+
 import java.io.Serializable;
+import java.lang.annotation.RetentionPolicy;
 
 public class Book implements Serializable {
+
+    @TestAnnotation(testVales = {Logtype.MESSAGE})
     private String name;
+    @TestAnnotation(testVales = {Logtype.MESSAGE})
     private Integer price;
+    @TestAnnotation(testVales = {Logtype.MESSAGE})
+    public String address;
+
+    @TestAnnotation(testVales = {Logtype.ADD,Logtype.LOGIN,Logtype.LOGOUT,Logtype.DEL})
+    public void test(){
+        
+    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {

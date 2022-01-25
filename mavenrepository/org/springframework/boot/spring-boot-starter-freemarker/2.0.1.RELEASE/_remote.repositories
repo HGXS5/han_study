@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:36:31 CST 2022
+#Thu Jan 20 11:03:33 CST 2022
 spring-boot-starter-freemarker-2.0.1.RELEASE.jar>alimaven=
 spring-boot-starter-freemarker-2.0.1.RELEASE.pom>alimaven=
+spring-boot-starter-freemarker-2.0.1.RELEASE-sources.jar>alimaven=

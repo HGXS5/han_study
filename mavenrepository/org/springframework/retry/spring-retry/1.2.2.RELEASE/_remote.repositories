@@ -1,4 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:36:31 CST 2022
+#Thu Jan 20 11:05:11 CST 2022
 spring-retry-1.2.2.RELEASE.jar>alimaven=
 spring-retry-1.2.2.RELEASE.pom>alimaven=
+spring-retry-1.2.2.RELEASE-sources.jar>alimaven=
