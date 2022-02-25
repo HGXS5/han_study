@@ -2,12 +2,14 @@ package cn.han.rabbitmq;
 
 import com.rabbitmq.client.*;
 import jdk.nashorn.internal.ir.CallNode;
+import jdk.nashorn.internal.runtime.Context;
 
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 public class RabbitMqTest {
+    //队列名
     String QUEUE_NAME = "queueOne";
 
     public static void main(String[] args) {
@@ -17,7 +19,8 @@ public class RabbitMqTest {
 //            for (int i = 0; i <5 ; i++) {
 //                producerTest(1);
 //            }
-            producerTest(1);
+//            producerTest(1);
+            customerTest("queue_han");
 //            for (int i = 0; i <3 ; i++) {
 //                test();
 //            }
@@ -56,6 +59,7 @@ public class RabbitMqTest {
     static void producerTest(int i) throws Exception{
         //队列名称
         final String QUEUE_NAME = "queue_han";
+
         //创建连接工厂，host默认是localhost
         ConnectionFactory cf = new ConnectionFactory();
 
@@ -63,6 +67,7 @@ public class RabbitMqTest {
         Connection connection = cf.newConnection();
         //创建一个通道
         Channel channel = connection.createChannel();
+
         /*
          * 声明队列
          * 1.第一个参数表示队列名称
@@ -97,7 +102,10 @@ public class RabbitMqTest {
 //        final String QUEUE_NAME = "queueOne"+1;
         //创建连接工厂，host默认是localhost
         ConnectionFactory cf = new ConnectionFactory();
-
+        cf.setHost("47.100.77.11");
+        cf.setPort(5672);
+        cf.setUsername("han");
+        cf.setPassword("Han#222");
         //创建一个连接
         Connection connection = cf.newConnection();
         //创建一个通道

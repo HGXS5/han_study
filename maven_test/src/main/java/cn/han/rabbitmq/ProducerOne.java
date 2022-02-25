@@ -15,7 +15,9 @@ public class ProducerOne {
         final String QUEUE_NAME = "queue_han";
             ConnectionFactory cf = new ConnectionFactory();
             cf.setHost("47.100.77.11");
-
+            cf.setPort(5672);
+            cf.setUsername("han");
+            cf.setPassword("Han#222");
             Connection connection = cf.newConnection();
             Channel channel = connection.createChannel();
 
