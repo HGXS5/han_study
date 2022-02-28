@@ -17,6 +17,7 @@ public class RabbitMqConnect {
     private final static Integer PORT = 5672;
     private static Connection connection = null;
     private static Channel channel = null;
+
     private RabbitMqConnect() {
     }
 
