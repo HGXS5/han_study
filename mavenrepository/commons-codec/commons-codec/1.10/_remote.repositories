@@ -1,5 +1,6 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:03:40 CST 2022
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Jan 28 21:28:59 CST 2018
 commons-codec-1.10.pom>alimaven=
+commons-codec-1.10.jar>central=
+commons-codec-1.10.pom>central=
 commons-codec-1.10.jar>alimaven=
-commons-codec-1.10-sources.jar>alimaven=

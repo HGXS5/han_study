@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:16 CST 2022
-okio-1.13.0-sources.jar>alimaven=
+#Mon Feb 14 17:09:13 CST 2022
+okio-1.13.0.pom>central=
 okio-1.13.0.jar>alimaven=
+okio-1.13.0.jar>central=
 okio-1.13.0.pom>alimaven=

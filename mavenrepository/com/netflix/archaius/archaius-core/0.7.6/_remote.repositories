@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:56 CST 2022
+#Mon Feb 14 17:08:07 CST 2022
+archaius-core-0.7.6.jar>cse1=
+archaius-core-0.7.6.pom>central=
+archaius-core-0.7.6.pom>cse1=
 archaius-core-0.7.6.pom>alimaven=
 archaius-core-0.7.6.jar>alimaven=
-archaius-core-0.7.6-sources.jar>alimaven=
+archaius-core-0.7.6.jar>central=

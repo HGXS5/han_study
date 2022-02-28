@@ -1,4 +1,4 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Wed Jan 05 13:25:14 CST 2022
-maven-clean-plugin-2.5.jar>alimaven=
-maven-clean-plugin-2.5.pom>alimaven=
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Jun 04 18:20:33 CST 2018
+maven-clean-plugin-2.5.jar>central=
+maven-clean-plugin-2.5.pom>central=

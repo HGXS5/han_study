@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:05:18 CST 2022
+#Mon Feb 14 17:08:46 CST 2022
+javassist-3.22.0-GA.jar>cse1=
 javassist-3.22.0-GA.pom>alimaven=
-javassist-3.22.0-GA-sources.jar>alimaven=
+javassist-3.22.0-GA.pom>cse1=
+javassist-3.22.0-GA.pom>central=
+javassist-3.22.0-GA.jar>central=
 javassist-3.22.0-GA.jar>alimaven=

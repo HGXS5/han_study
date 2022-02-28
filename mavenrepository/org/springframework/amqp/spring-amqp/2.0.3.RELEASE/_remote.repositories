@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:05:02 CST 2022
+#Mon Feb 14 17:09:13 CST 2022
 spring-amqp-2.0.3.RELEASE.pom>alimaven=
 spring-amqp-2.0.3.RELEASE.jar>alimaven=
-spring-amqp-2.0.3.RELEASE-sources.jar>alimaven=
+spring-amqp-2.0.3.RELEASE.jar>central=
+spring-amqp-2.0.3.RELEASE.pom>cse1=
+spring-amqp-2.0.3.RELEASE.jar>cse1=
+spring-amqp-2.0.3.RELEASE.pom>central=

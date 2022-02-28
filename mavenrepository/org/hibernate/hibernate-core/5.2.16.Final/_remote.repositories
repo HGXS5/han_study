@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:06 CST 2022
-hibernate-core-5.2.16.Final-sources.jar>alimaven=
+#Mon Feb 14 17:08:46 CST 2022
 hibernate-core-5.2.16.Final.jar>alimaven=
+hibernate-core-5.2.16.Final.jar>cse1=
+hibernate-core-5.2.16.Final.pom>cse1=
+hibernate-core-5.2.16.Final.jar>central=
+hibernate-core-5.2.16.Final.pom>central=
 hibernate-core-5.2.16.Final.pom>alimaven=

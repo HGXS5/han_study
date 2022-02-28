@@ -1,3 +1,4 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 17:16:28 CST 2022
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 05 21:33:12 CST 2018
+httpcomponents-client-4.5.3.pom>central=
 httpcomponents-client-4.5.3.pom>alimaven=

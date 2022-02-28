@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:05:06 CST 2022
-feign-core-9.5.1-sources.jar>alimaven=
+#Mon Feb 14 17:08:07 CST 2022
+feign-core-9.5.1.pom>central=
+feign-core-9.5.1.pom>cse1=
+feign-core-9.5.1.jar>central=
 feign-core-9.5.1.pom>alimaven=
+feign-core-9.5.1.jar>cse1=
 feign-core-9.5.1.jar>alimaven=

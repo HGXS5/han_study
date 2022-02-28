@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Wed Jan 05 16:18:47 CST 2022
+#Mon Feb 14 17:09:13 CST 2022
+amqp-client-5.1.2.pom>central=
+amqp-client-5.1.2.jar>cse1=
 amqp-client-5.1.2.pom>alimaven=
-amqp-client-5.1.2-sources.jar>alimaven=
+amqp-client-5.1.2.jar>central=
+amqp-client-5.1.2.pom>cse1=
 amqp-client-5.1.2.jar>alimaven=

@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:03:39 CST 2022
-swagger-models-1.5.13-sources.jar>alimaven=
+#Mon Feb 14 17:08:07 CST 2022
 swagger-models-1.5.13.pom>alimaven=
 swagger-models-1.5.13.jar>alimaven=
+swagger-models-1.5.13.jar>central=
+swagger-models-1.5.13.pom>central=

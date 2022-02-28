@@ -1,5 +1,6 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:05:31 CST 2022
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 26 14:10:05 CST 2018
 commons-configuration-1.8.jar>alimaven=
 commons-configuration-1.8.pom>alimaven=
-commons-configuration-1.8-sources.jar>alimaven=
+commons-configuration-1.8.jar>central=
+commons-configuration-1.8.pom>central=

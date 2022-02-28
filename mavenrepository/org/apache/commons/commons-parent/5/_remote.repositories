@@ -1,3 +1,4 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Wed Jan 05 15:00:35 CST 2022
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Jan 28 21:27:03 CST 2018
+commons-parent-5.pom>central=
 commons-parent-5.pom>alimaven=

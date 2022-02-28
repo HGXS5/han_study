@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:03:56 CST 2022
+#Mon Feb 14 17:09:13 CST 2022
+mongodb-driver-core-3.6.3.jar>cse1=
+mongodb-driver-core-3.6.3.pom>cse1=
+mongodb-driver-core-3.6.3.pom>central=
 mongodb-driver-core-3.6.3.jar>alimaven=
 mongodb-driver-core-3.6.3.pom>alimaven=
-mongodb-driver-core-3.6.3-sources.jar>alimaven=
+mongodb-driver-core-3.6.3.jar>central=

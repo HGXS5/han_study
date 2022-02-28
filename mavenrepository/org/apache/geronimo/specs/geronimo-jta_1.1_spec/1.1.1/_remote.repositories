@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:05:09 CST 2022
+#Mon Feb 14 17:08:26 CST 2022
+geronimo-jta_1.1_spec-1.1.1.jar>central=
 geronimo-jta_1.1_spec-1.1.1.jar>alimaven=
-geronimo-jta_1.1_spec-1.1.1-sources.jar>alimaven=
+geronimo-jta_1.1_spec-1.1.1.pom>central=
 geronimo-jta_1.1_spec-1.1.1.pom>alimaven=

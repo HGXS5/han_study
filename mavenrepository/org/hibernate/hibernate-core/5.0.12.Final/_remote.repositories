@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:14 CST 2022
+#Mon Feb 14 17:08:26 CST 2022
+hibernate-core-5.0.12.Final.jar>central=
 hibernate-core-5.0.12.Final.pom>alimaven=
-hibernate-core-5.0.12.Final-sources.jar>alimaven=
 hibernate-core-5.0.12.Final.jar>alimaven=
+hibernate-core-5.0.12.Final.pom>central=

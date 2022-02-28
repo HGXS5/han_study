@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:15 CST 2022
-j2objc-annotations-1.1-sources.jar>alimaven=
+#Mon Feb 14 17:08:07 CST 2022
 j2objc-annotations-1.1.pom>alimaven=
 j2objc-annotations-1.1.jar>alimaven=
+j2objc-annotations-1.1.jar>central=
+j2objc-annotations-1.1.pom>central=

@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:17 CST 2022
-netty-codec-socks-4.1.23.Final-sources.jar>alimaven=
+#Mon Feb 14 17:09:13 CST 2022
+netty-codec-socks-4.1.23.Final.jar>cse1=
+netty-codec-socks-4.1.23.Final.pom>central=
 netty-codec-socks-4.1.23.Final.jar>alimaven=
+netty-codec-socks-4.1.23.Final.pom>cse1=
+netty-codec-socks-4.1.23.Final.jar>central=
 netty-codec-socks-4.1.23.Final.pom>alimaven=

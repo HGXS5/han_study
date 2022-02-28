@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:04:24 CST 2022
+#Mon Feb 14 17:08:07 CST 2022
+animal-sniffer-annotations-1.14.jar>central=
 animal-sniffer-annotations-1.14.jar>alimaven=
-animal-sniffer-annotations-1.14-sources.jar>alimaven=
 animal-sniffer-annotations-1.14.pom>alimaven=
+animal-sniffer-annotations-1.14.pom>central=

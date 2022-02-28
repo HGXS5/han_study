@@ -1,5 +1,6 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:03:55 CST 2022
-httpclient-4.5.3.jar>alimaven=
-httpclient-4.5.3-sources.jar>alimaven=
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Mon Feb 05 21:33:13 CST 2018
+httpclient-4.5.3.jar>central=
 httpclient-4.5.3.pom>alimaven=
+httpclient-4.5.3.pom>central=
+httpclient-4.5.3.jar>alimaven=

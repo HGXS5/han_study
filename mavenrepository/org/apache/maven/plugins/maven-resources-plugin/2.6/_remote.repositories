@@ -1,4 +1,4 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Wed Jan 05 13:25:28 CST 2022
-maven-resources-plugin-2.6.jar>alimaven=
-maven-resources-plugin-2.6.pom>alimaven=
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Jan 28 14:46:55 CST 2018
+maven-resources-plugin-2.6.jar>central=
+maven-resources-plugin-2.6.pom>central=

@@ -1,5 +1,6 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:05:02 CST 2022
-javax.inject-1.pom>alimaven=
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Jan 28 14:42:52 CST 2018
+javax.inject-1.jar>central=
+javax.inject-1.pom>central=
 javax.inject-1.jar>alimaven=
-javax.inject-1-sources.jar>alimaven=
+javax.inject-1.pom>alimaven=

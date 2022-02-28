@@ -1,3 +1,5 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:34:36 CST 2022
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Fri Sep 07 21:30:18 CST 2018
 jboss-parent-20.pom>alimaven=
+jboss-parent-20.pom>central=
+jboss-parent-20.pom>cse1=

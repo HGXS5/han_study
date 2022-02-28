@@ -1,5 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Jan 20 11:03:48 CST 2022
+#Mon Feb 14 17:08:07 CST 2022
+snakeyaml-1.19.jar>cse1=
+snakeyaml-1.19.jar>central=
+snakeyaml-1.19.pom>central=
 snakeyaml-1.19.pom>alimaven=
 snakeyaml-1.19.jar>alimaven=
-snakeyaml-1.19-sources.jar>alimaven=
+snakeyaml-1.19.pom>cse1=

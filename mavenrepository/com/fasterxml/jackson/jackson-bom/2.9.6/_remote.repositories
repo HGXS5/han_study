@@ -1,3 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Jan 10 16:32:27 CST 2022
+#Mon Feb 14 17:07:17 CST 2022
+jackson-bom-2.9.6.pom>central=
+jackson-bom-2.9.6.pom>cse1=
 jackson-bom-2.9.6.pom>alimaven=
