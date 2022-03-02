@@ -1,5 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Feb 15 16:04:05 CST 2022
+#Wed Mar 02 13:17:22 CST 2022
+maven-plugin-registry-2.2.1.jar>alimaven=
 maven-plugin-registry-2.2.1.pom>alimaven=
-maven-plugin-registry-2.2.1.pom>central=
 maven-plugin-registry-2.2.1.jar>central=
+maven-plugin-registry-2.2.1.pom>central=

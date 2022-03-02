@@ -1,4 +1,6 @@
-#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Sun Jan 28 14:48:12 CST 2018
-doxia-sink-api-1.0-alpha-7.jar>central=
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Mar 02 15:23:21 CST 2022
+doxia-sink-api-1.0-alpha-7.pom>alimaven=
+doxia-sink-api-1.0-alpha-7.jar>alimaven=
 doxia-sink-api-1.0-alpha-7.pom>central=
+doxia-sink-api-1.0-alpha-7.jar>central=

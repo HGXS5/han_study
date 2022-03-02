@@ -1,4 +1,6 @@
-#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Sun Jan 28 14:48:12 CST 2018
-maven-model-2.0.6.jar>central=
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Mar 02 15:23:22 CST 2022
 maven-model-2.0.6.pom>central=
+maven-model-2.0.6.pom>alimaven=
+maven-model-2.0.6.jar>alimaven=
+maven-model-2.0.6.jar>central=
