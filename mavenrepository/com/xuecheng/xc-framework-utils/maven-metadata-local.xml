@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.xuecheng</groupId>
+  <artifactId>xc-framework-utils</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20220302061100</lastUpdated>
+  </versioning>
+</metadata>

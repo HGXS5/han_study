@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun Jan 28 14:49:53 CST 2018
+https\://repo.spring.io/libs-snapshot/.error=
+http\://maven.aliyun.com/nexus/content/groups/public/.error=
+http\://oss.jfrog.org/artifactory/oss-snapshot-local/.lastUpdated=1517122192159
+https\://repo.spring.io/libs-snapshot/.lastUpdated=1517122193578
+http\://oss.jfrog.org/artifactory/oss-snapshot-local/.error=
+http\://maven.aliyun.com/nexus/content/groups/public/.lastUpdated=1517122191678

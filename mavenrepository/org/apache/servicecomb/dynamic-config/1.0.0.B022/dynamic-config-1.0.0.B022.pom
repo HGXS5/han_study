@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.apache.servicecomb</groupId>
+    <artifactId>java-chassis-parent</artifactId>
+    <version>1.0.0.B022</version>
+    <relativePath>../parent</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>dynamic-config</artifactId>
+  <name>Java Chassis::Dynamic Config</name>
+  <packaging>pom</packaging>
+  <modules>
+    <module>config-apollo</module>
+    <module>config-cc</module>
+  </modules>
+
+</project>

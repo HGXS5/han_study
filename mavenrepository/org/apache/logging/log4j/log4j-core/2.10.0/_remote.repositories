@@ -1,0 +1,8 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Feb 18 12:30:50 CST 2022
+log4j-core-2.10.0.jar>central=
+log4j-core-2.10.0.jar>cse1=
+log4j-core-2.10.0.jar>alimaven=
+log4j-core-2.10.0.pom>central=
+log4j-core-2.10.0.pom>cse1=
+log4j-core-2.10.0.pom>alimaven=

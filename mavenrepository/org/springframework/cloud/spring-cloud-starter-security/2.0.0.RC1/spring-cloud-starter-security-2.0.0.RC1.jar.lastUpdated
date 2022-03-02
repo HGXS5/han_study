@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Sep 06 15:14:22 CST 2018
+@default-spring-snapshots-https\://repo.spring.io/snapshot/.lastUpdated=1536218040247
+http\://maven.huaweicse.com/nexus/content/groups/public/.lastUpdated=1536218037583
+https\://repo.spring.io/snapshot/.error=Could not transfer artifact org.springframework.cloud\:spring-cloud-starter-security\:jar\:2.0.0.RC1 from/to spring-snapshots (https\://repo.spring.io/snapshot)\: Connect to repo.spring.io\:443 [repo.spring.io/35.241.58.96] failed\: Read timed out
+https\://repo.spring.io/milestone/.lastUpdated=1536218062009
+http\://maven.huaweicse.com/nexus/content/groups/public/.error=
