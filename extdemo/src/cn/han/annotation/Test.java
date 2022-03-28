@@ -8,7 +8,7 @@ public class Test {
         try {
             //获取Student的Class对象
             Class stuClass = Class.forName("cn.han.pojo.Book");
-
+//            stuClass.get
             //说明一下，这里形参不能写成Integer.class，应写为int.class
             //获取注解所标注的方法
             Method stuMethod = stuClass.getMethod("test");
