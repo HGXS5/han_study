@@ -9,3 +9,7 @@ spring:
     username: han
     password: Han#222
     virtualHost: /
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
