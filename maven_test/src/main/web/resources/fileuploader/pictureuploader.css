@@ -1,0 +1,16 @@
+ .uploadTable{
+  margin:5px auto;
+  border-collapse:collapse;
+  border:1px solid #96b7e0;
+  padding:3px;
+  font-size:12px;
+  text-align:left;
+ }
+ .uploadTd{
+        background-color:#E6F0F6;
+        text-align:right;
+        font-size:12px;
+        font-weight:bold;
+        height:30px;
+}
+      

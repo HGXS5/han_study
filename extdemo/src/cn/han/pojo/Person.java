@@ -2,7 +2,7 @@ package cn.han.pojo;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {
+public class Person implements Serializable,Comparable{
 //public class Person implements Cloneable {
     private String name;
     private Integer age;
@@ -10,6 +10,10 @@ public class Person implements Serializable {
     private Apples apples;
 
 
+    public Person(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public Person() {
     }
@@ -73,5 +77,18 @@ public class Person implements Serializable {
         this.name = name;
         this.age = age;
         this.book = book;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (!(o instanceof Person)){
+            throw new NullPointerException("no exits Persion");
+        }
+        if (((Person) o).age>this.age){
+            return 1;
+        }else if(((Person) o).age<this.age){
+            return -1;
+        }
+        return 0;
     }
 }
