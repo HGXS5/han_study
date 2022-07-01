@@ -1,6 +1,7 @@
 package cn.han.date;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -18,7 +19,8 @@ public class DateDemo {
 //        String searchStartTime = sdf.format(new Date(startTime));
 //        System.out.println(searchStartTime);
 
-        int CASE_INSENSITIVE = 0x02;
-        System.out.println(CASE_INSENSITIVE);
+        LocalDateTime localDateTime = LocalDateTime.parse("2022-06-13T17:55");
+
+        System.out.println(localDateTime);
     }
 }

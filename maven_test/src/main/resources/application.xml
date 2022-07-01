@@ -41,5 +41,5 @@
 
     <bean name="hanController" class="cn.han.spring.spring1.controller.HanController" scope="singleton"></bean>
 
-
+    <context:component-scan base-package="cn.han.interfaceAndImpl.impl"/>
 </beans>

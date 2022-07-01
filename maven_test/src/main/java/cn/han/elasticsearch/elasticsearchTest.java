@@ -3,7 +3,7 @@ package cn.han.elasticsearch;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 public class elasticsearchTest {
 
 
@@ -31,5 +31,8 @@ public class elasticsearchTest {
             "         }\n" +
             "      }";
 
+    public static void main(String[] args) {
+        System.out.println(new elasticsearchTest().sr);
+    }
 
 }

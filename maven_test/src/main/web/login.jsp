@@ -1,208 +1,105 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
-<% 
-  String path =request.getContextPath();
-%>
-<html>
-<head  id='login.jsp'>
-<link rel="shortcut icon" href="resource/images/ad.ico" />
-<script type="text/javascript">
-  if(parent.mainPanle){
-	parent.location = 'login.jsp';
-}
-</script> 	
-<style type="text/css">
-body {
-	font-size: 12px;margin: 0;padding: 0;background: #93bbe5 url(resource/images/load_bg.jpg) top center no-repeat;color: #3a69ad;
-}
-.lo_tit {
-	margin: 8px auto;margin-top: 104px;width: 458px;height: 19px;
-}
-.load {
-	margin: 0 auto;width: 458px;height: 301px;background: url(resource/images/lo_line.jpg) repeat-x;
-}
-.load .side {
-	float: left;width: 10px;height: 301px;
-}
-.load .ct {
-	float: left;width: 438px;margin: 26px 0px;overflow: hidden;
-}
-.load .ct .tit {
-	height: 29px;margin: 0px 60px;margin-bottom: 25px;
-}
-.lo_ct {
-	clear: both;padding: 0;margin-bottom: 10px;width: 338px;margin: 0px 50px;
-}
-.lo_ct input {
-	padding: 0;margin: 0;width: 137px;height: 23px;line-height: 23px;
-	border: none;padding-left: 3px;color: #000000;padding-top: 3px; *padding-top: 1px;
-}
-.lo_ct span {
-	float: left;width: 75px;padding-right: 4px;
-}
-lo_ct span .img1 {
-	float: left;width: 62px;
-}
-.lo_ct span input {
-	width: 75px;background: url(resource/images/load_in2.jpg) no-repeat;
-}
-.lo_ct .bt {
-	width: 81px;height: 30px;background: none;
-}
-.at {
-	height: 30px;padding-left: 8px;margin-top: 40px;color: #4C4C4C;text-align: left;
-}
-#b_at {
-	position: absolute;top: 470px;left: 0;width: 100%;height: 30px;text-align: center;
-}
-.bot input {
-	width: 81px;height: 30px;border: none;background: url(resource/images/bu_load1.jpg) no-repeat;
-}
-.bot input:hover {
-	background: url(resource/images/bu_load2.jpg) no-repeat;
-}
-.red {
-	color: #FF0000;font-size:10px;
-}
-#dialogbg {
-	width: 100%;height: auto;position: absolute;left: 0;top: 0;z-index: 20;background: #666;opacity: 0.3;filter: alpha(opacity = 30);-moz-opacity: 0.3;
-}
-#dialog {
-	width: 500px;height: 300px;border: 1px solid #86B4E5;
-	position: absolute;left: 0;top: 0;z-index: 21;font-family: Arial, Helvetica, sans-serif "瀹嬩綋";background: #FFF;
-}
-#dialog #dialog_title,#dialog h2 {
-	font-size: 14px;height: 22px;line-height: normal;padding: 9px 0 0 8px;
-	color: #0067B2;cursor: move;border-bottom: 1px solid #86B4E5;position: relative;background: #E9F2FB url(resource/images/bg_cntnav.jpg) center repeat-x;
-}
-#btn_closedialog {
-	width: 16px;height: 16px;position: absolute;right: 8px;top: 8px;
-	cursor: pointer;background: url(resource/images/btn_close.png) no-repeat;
-}
-#cnt_list {
-	overflow: auto;overflow-x: hidden;margin: 5px 0 0 0;padding: 0 0 0 5px;position: relative;
-}
-#cnt_list table {
-	text-align: center;text-align: justify;text-justify: inter-ideograph;
-}
-#cnt_list td {
-	text-align: center;
-}
+<!DOCTYPE html >
+<!--<html xmlns:th="http://www.thymeleaf.org" lang="en">-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" lang="en">
 
-#cnt_list td img {
-	margin-right: 5px;
-	position: relative;
-	top: 2px;
-}
-
-#btn_list {
-	height: 20px;
-	padding: 8px 0;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	text-align: center;
-	border-top: 1px dashed #CCC;
-}
-
-#btn_list input {
-	width: 61px;
-	height: 20px;
-	border: none;
-	background: url(resource/images/but_guild_1.gif) no-repeat;
-}
-
-#btn_list input:hover {
-	background: url(resource/images/but_guild_2.gif) no-repeat;
-}
-
-.page_line .bu button,.info button,#pcolumn_delete button,.page_line .bu input,.info input,#pcolumn_delete input{
-	float: center;padding: 0;margin: 0;border: none;text-align: center;margin-top: 5px;
-	width: 100px;height: 20px;background: url(resource/images/but_guild_1.gif) top center no-repeat;color: #006ec1;
-	font-size: 12px;line-height: 20px;font-weight: 100;word-spacing: 0;
-}
-.fix_inputbg{
-	background:url(resource/images/bg_logininout.jpg) no-repeat;
-}
-.fix_inputbg input{
-    background:none;
-}
-</style>
-<title>CPAgent管理系统</title>
+<head>
+    <!--    <link rel = "stylesheet" th:href="@{/css/jquery.min.css}"/>-->
+    <meta charset="UTF-8">
+    <title>登陆</title>
 </head>
-<body style="text-align:center">
-		<div class="lo_tit">
-			
-		</div>
-		<div class="load">
-			<div class="side">
-				<img src="resource/images/le_line.jpg" width="10" height="301">
-			</div>
-			<div class="ct">
-				<div class="tit">
-					<table>
-					<tr><td><img src="resource/images/load_091009_14.jpg" height="29">
-					<td style="font-size:20px;font-weight:bold">CPAgent管理系统
-					</table>
-				</div>
-				<div class="lo_status">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</div>
-				<div class="lo_ct">
-					<form action="/login" method="post" id="login">
-						<input type="hidden" name="showSuccessDialog" value="" id="showSuccessDialog">
-						<input type="hidden" name="coship_iepgm_login" value="true">
-						<table width="338" border="0" cellpadding="0" cellspacing="0">
-							<tbody><tr>
-								<td width="25%" height="37" align="right">
-									用户&nbsp;&nbsp;
-								</td>
-								<td width="47%" height="37">
-									<div class="fix_inputbg">
-										<input type="text" name="userName" id="loginName" class="valid" value="wasu">
-									</div>
-								</td>
-								<td width="28%" height="37" class="red" id="errorMessage">
-									${message}
-								</td>
-							</tr>
-							<tr>
-								<td height="37" align="right">
-									密码&nbsp;&nbsp;
-								</td>
-								<td height="37">
-									<div class="fix_inputbg">
-										<input type="password" name="password" id="textfield" value="">
-									</div>
-								</td>
-								<td height="37" class="red">
-									
-								</td>
-							</tr>
+<body>
+<h2>标准登陆页面</h2>
+<h3>表单登陆</h3>
+<!--<h3>${user.name}</h3>-->
+<form action="/han" method="post" name="loginName">
+    <table>
+        <input type="hidden" th:value="${_csrf.token}" name="_csrf" th:if="${_csrf}">
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td>记住:</td>
+            <td><input type="checkbox" name="remember-me" value="true"></td>
+        </tr>
+        <tr>
+            <td>授权:</td>
+            <td><input type="checkbox" id="authId"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="授权" onclick="authorization()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                    type="reset" value="重置"/>
+            </td>
+        </tr>
 
-							<tr>
-								<td height="37">
-									&nbsp;
-								</td>
-								<td height="37" class="bot">
-									<input type="submit" style="cursor:pointer;" value="" id="imageField" src="resource/images/bu_load1.jpg">
-								</td>
-								<td height="37">
-									&nbsp;
-								</td>
-							</tr>
-						</tbody></table>
-					</form>
-				</div>
-				<div class="at">
-					<br>注：忘记密码，请联系管理员。
-				</div>
-			</div>
-			<div class="side">
-				<img src="resource/images/ri_line.jpg">
-			</div>
-		</div>
-		<div id="b_at">
-			© 华数传媒网络有限公司版权所有
-		</div> 
+    </table>
+</form>
+<script>
+    window.onload=function () {
+        alert("start")
+        var btn = document.getElementsByName("submit")[0];
+        var byId = document.getElementById("authId");
+        btn.disabled = false;
+        alert(byId)
+        if (byId[0].type == 'checkbox' && byId[0].checked) {
+            alert("授权开始")
+            authorization();
+        }else {
+            btn.disabled = true;
+        }
+        alert("end")
+    }
+    // var chk = document.getElementsByName('authName')[0];
+    // var btn = document.getElementsByName("submit")[0];
+    // var fname = document.forms["loginName"]["username"].value;
+    // var sname = document.forms["loginName"]["password"].value;
+    // // var cname = document.forms["bookingForm"]["companyName"].value;
+    //
+    // document.getElementsByName('authName')[0].onclick = function() {
+    //     textCol()
+    // };
+    //
+    // function textCol() {
+    //     if (chk.checked) {
+    //         document.getElementById("authId").style.color = "black";
+    //         document.getElementById("authId").style.fontWeight = "normal";
+    //         btn.disabled = false;
+    //
+    //         if (fname == null || fname == "", sname == null || sname == "") {
+    //             btn.disabled = true;
+    //
+    //         }
+    //     }
+    //     else {
+    //         document.getElementById("authId").style.color = "red";
+    //         document.getElementById("authId").style.fontWeight = "bold";
+    //         btn.disabled = true;
+    //
+    //     }
+    // }
+
+    function authorization() {
+        var myAjax = new XMLHttpRequest();
+        //设置方法及请求路径
+        myAjax.open("get", "http://localhost:8080/oauth/authorize?response_type=code&client_id=hanlibo&redirect_uri=http://localhost:8080/code/authorizationCode&scope=all");
+        //设置请求头信息 post
+        // myAjax.setRequestHeader('content-type', 'allocation/x-www-form-urlencaded');
+        //发送请求
+        myAjax.send();
+        //获取响应结果
+        myAjax.onload = function () {
+            console.log(myAjax.response);
+        }
+    }
+
+
+</script>
 </body>
 </html>
