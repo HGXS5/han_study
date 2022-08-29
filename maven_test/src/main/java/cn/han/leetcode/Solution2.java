@@ -11,4 +11,10 @@ package cn.han.leetcode;
  * @ProName maven_test
  */
 public class Solution2 {
+    public static void main(String[] args) {
+        test1();
+    }
+    public static  void test1(){
+
+    }
 }

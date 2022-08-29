@@ -1,5 +1,7 @@
 package cn.han.file;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,6 +14,7 @@ import java.util.regex.Pattern;
  * @Date 2022/6/8 9:33
  * @ProName maven_test
  */
+@Slf4j
 public class FileTestDemo {
     public static void main(String[] args) throws IOException {
 //        String aaa = new File("aaa").getAbsolutePath();
@@ -82,6 +85,43 @@ public class FileTestDemo {
 //            }
 //        }
 //        System.out.println(buffer.toString());
+        String s = ftpChangeUrl(path);
+        System.out.println(s);
 
     }
+    private static String ftpChangeUrl(String ftpUrl) {
+//        logger.info("修改前ftpIP:{}", ftpUrl);
+        StringBuffer buffer = new StringBuffer();
+
+        StringBuilder ftpNewPath = new StringBuilder();
+        String[] split = ftpUrl.split("//www");
+        for (String s : split) {
+            ftpNewPath.append(s);
+        }
+        String[] strings = ftpNewPath.toString().split("//");
+        for (int i = 0; i < strings.length; i++) {
+            if (i == 0) {
+                String str = strings[i];
+                buffer.append(str + "//");
+            }
+            if (i > 0 && i == strings.length - 1) {
+                String str = strings[i];
+                buffer.append(str);
+                break;
+            }
+            if (i > 0) {
+                String str = strings[i];
+                buffer.append(str + "/");
+            }
+        }
+//        logger.info("修改后ftpIP:{}", buffer.toString());
+        String pathAs = buffer.toString();
+        String[] split1 = pathAs.split("@");
+        String s = split1[1];
+        String ftpUser = "ftp://ftpuser01:1qaz)OKM@";
+        String allPath = ftpUser + s;
+        return allPath;
+    }
+
+
 }

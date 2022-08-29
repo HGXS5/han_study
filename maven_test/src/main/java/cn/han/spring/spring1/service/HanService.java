@@ -3,6 +3,7 @@ package cn.han.spring.spring1.service;
 import cn.han.spring.spring1.dao.HanDao;
 
 public class HanService {
+
    private HanDao handao;
 
     /**

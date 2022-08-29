@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
  * @Date 2022/6/30 11:03
  * @ProName maven_test
  */
+@Service
 public class InterfaceImplTwo implements IntereFaceDemo1 {
     @Override
     public void speak() {

@@ -1,5 +1,11 @@
 package cn.han.object;
 
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,9 +17,19 @@ import java.util.List;
  */
 public class CloneDemo {
     public static void main(String[] args) {
-
+        testClass();
     }
-
+    public static void testClass(){
+//        String qualifiedClassName = "com.wasu.cp.node.message.SopplusUgcFdsMessageHandler";
+        String qualifiedClassName = "cn.han.object.Animal";
+        try {
+            Class<?> clz = Class.forName(qualifiedClassName);
+            String beanName = StringUtils.uncapitalize(clz.getSimpleName());
+            System.out.println(beanName);
+        } catch (ClassNotFoundException e) {
+            System.out.println("errr");
+        }
+    }
     private void sortComparableTest() {
         List<Fish> fishs = new ArrayList<>();
         for (int i = 5; i >= 0; i--) {
@@ -40,4 +56,12 @@ public class CloneDemo {
         }
         System.out.println(fish.toString());
     }
+
+    public static void demo(){
+        Dog dog = new Dog();
+//        Dog clone = (Dog) dog.clone();
+    }
+
+
+
 }
