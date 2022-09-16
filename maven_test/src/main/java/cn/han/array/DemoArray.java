@@ -4,6 +4,8 @@ package cn.han.array;
 import cn.han.object.Animal;
 import cn.han.object.Fish;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.MultiValueMap;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,13 +26,65 @@ import java.util.stream.Stream;
 public class DemoArray {
 
     public static void main(String[] args) throws IOException {
+        List<String> listIds = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            listIds.add(String.valueOf(i));
+        }
+        String fileIds = "5,8";
+        List list = lastList(listIds, fileIds);
+        System.out.println(list.toString());
+    }
+
+    private static List lastList(List listIds, String fileIds) {
+        if (!listIds.isEmpty() && StringUtils.isNoneBlank(fileIds)) {
+            String[] strings = fileIds.split(",");
+            for (int i1 = 0; i1 < strings.length; i1++) {
+                for (int i2 = 0; i2 < listIds.size(); i2++) {
+                    if (strings[i1].equals(listIds.get(i2))) {
+                        listIds.remove(i2);
+                    }
+                }
+            }
+        }
+        return listIds;
+    }
+
+    public static boolean add() {
+        throw new UnsupportedOperationException();
+    }
+
+    public static void test7() {
+        if (.75f == 0.75F) {
+            System.out.println("相等");
+        }
+        boolean modified = false;
+        if (add())
+            modified = true;
+
+        System.out.println(modified);
+
+
+        System.out.println();
+    }
+
+    public static void test6() {
         String kj = "name";
-        for (int i = 0; i < 3; i++) {
+        int i;
+        for (i = 0; i < 3; i++) {
             int hash = hash(kj);
             System.out.println(hash);
         }
-
-        test4();
+        HashMap map = new HashMap();
+        map.put("it", 1);
+        map.put("iu", 2);
+        String s = null;
+        try {
+            s = test5();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(s);
+//        test4();
 //        test2();
 //        String as = "1234567";
 //        StringBuilder sb = new StringBuilder();
@@ -62,6 +116,13 @@ public class DemoArray {
 //        }
 //        System.out.println("list2添加完成：" + list2.toString());
 //        demo(list1, list2);
+    }
+
+    public static String test5() throws InterruptedException {
+        while (true) {
+            Thread.sleep(10000);
+            return "测试";
+        }
     }
 
     private static void test1() {
@@ -270,10 +331,11 @@ public class DemoArray {
 //        content.add(sb.toString());
 //    }
     }
-    public static void test4(){
+
+    public static void test4() {
         List<List<Integer>> cutList = new ArrayList<>();
         List<Integer> lists = new ArrayList<>();
-        for (int i = 1; i <=34 ; i++) {
+        for (int i = 1; i <= 34; i++) {
             lists.add(i);
         }
 
@@ -281,9 +343,9 @@ public class DemoArray {
         cutNum = cutNum + 1;
         int range = 10;
         for (int i = 1; i <= cutNum; i++) {
-            if (i==cutNum){
+            if (i == cutNum) {
 //                0-9 10-19 20-29
-                List<Integer> subList = lists.subList((i -1)*range, lists.size());
+                List<Integer> subList = lists.subList((i - 1) * range, lists.size());
                 cutList.add(subList);
                 break;
             }
@@ -293,6 +355,7 @@ public class DemoArray {
 
         System.out.println(cutList);
     }
+
     public static int hash(Object key) {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);

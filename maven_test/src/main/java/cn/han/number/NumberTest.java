@@ -10,7 +10,17 @@ import java.util.List;
  */
 public class NumberTest {
     public static void main(String[] args) {
-//        List<Integer> numbers = new ArrayList<>();
+        int hash = hash("key");
+        int n1 = 16;
+        int n2 = 32;
+        int i1 = (n1 - 1) & hash;
+        int i2 = (n2 - 1) & hash;
+        System.out.println(i1);
+        System.out.println(i2);
+
+    }
+    public static void test4(){
+        //        List<Integer> numbers = new ArrayList<>();
 //        for (int i = 1; i <10 ; i++) {
 //            numbers.add(i);
 //        }
@@ -18,8 +28,22 @@ public class NumberTest {
 //        for (int i = 1; i <= numbers.size(); i++) {
 //            System.out.println(i+":"+numbers.get(i-1));
 //        }
-        final int NONE    = 0x0;
-        System.out.println(NONE);
+        int hash = hash("name");
+        System.out.println("hash:"+hash);
+        int n = 16;
+        int i = (n - 1) & hash;
+        System.out.println(i);
+        int MAXIMUM_CAPACITY = 1 << 30;
+        System.out.println(MAXIMUM_CAPACITY);
+        int f = 2 << 1;
+        System.out.println(f);
+        for (int j = 1; j <=64 ; j++) {
+            int oldCap = 8;
+            hash = j;
+            int result = hash & oldCap;
+            System.out.println("oldCap:"+oldCap+"-hash:"+hash+"="+result);
+        }
+
     }
     public static void test1(){
         //        int d = 100000 >>> 16;
@@ -29,5 +53,13 @@ public class NumberTest {
     public static void test2(){
         int i = -1/ 10000;
         System.out.println(i);
+    }
+    public static void test3(){
+        final int NONE    = 0x0;
+        System.out.println(NONE);
+    }
+    static int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
 }

@@ -2,6 +2,7 @@ package cn.han.util;
 
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.http.StatusLine;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.EntityBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -41,6 +42,38 @@ public class HttpUtil {
 			throw pair.getRight();
 
 		return pair.getLeft();
+	}
+	public static Pair<String, Exception> doPost(String url, String content, String contentType, String charset,int socketTimeout,int connectTimeout,int requestTimeout) {
+		CloseableHttpResponse httpResponse = null;
+		HttpPost httpPost = null;
+
+		String responseText = null;
+		Exception ex = null;
+		try {
+			EntityBuilder eb = EntityBuilder.create();
+			eb.setContentType(ContentType.create(contentType, charset));
+			eb.setContentEncoding(charset);
+			eb.setText(content);
+			RequestConfig requestConfig = RequestConfig.custom()
+					.setSocketTimeout(socketTimeout)
+					.setConnectTimeout(connectTimeout)
+					.setConnectionRequestTimeout(requestTimeout).build();
+			httpPost = new HttpPost(url);
+			httpPost.setEntity(eb.build());
+			httpPost.setConfig(requestConfig);
+			httpResponse = httpClient.execute(httpPost);
+			StatusLine statusLine = httpResponse.getStatusLine();
+			if (statusLine.getStatusCode() > 300)
+				throw new RuntimeException(format("StatusCode: %s", statusLine.getStatusCode()));
+
+			responseText = EntityUtils.toString(httpResponse.getEntity(),"UTF-8").trim();
+		} catch (Exception e) {
+			ex = e;
+		} finally {
+			releaseAll(httpResponse, httpPost);
+		}
+
+		return Pair.of(responseText, ex);
 	}
 
 	public static String get(String url, Map<String, String> params) throws Exception {

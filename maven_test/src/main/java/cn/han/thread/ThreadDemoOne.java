@@ -1,5 +1,10 @@
 package cn.han.thread;
 
+
+
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -10,7 +15,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadDemoOne {
     public static void main(String[] args) {
 //        test1();
-
+        ThreadLocal<DateFormat> formatThreadLocal = new ThreadLocal<DateFormat>() {
+            @Override
+            protected DateFormat initialValue() {
+                return new SimpleDateFormat("yyyy-MM-dd");
+            }
+        };
     }
 
     public static void test1() {

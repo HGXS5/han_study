@@ -408,4 +408,24 @@ public class CyxClient {
         }
     }
 
+    @Override
+    public String toString() {
+        return "CyxClient{" +
+                "rootPath='" + rootPath + '\'' +
+                ", successPath='" + successPath + '\'' +
+                ", failPath='" + failPath + '\'' +
+                ", movePath='" + movePath + '\'' +
+                ", separator='" + separator + '\'' +
+                ", readFlag=" + readFlag +
+                ", moveFile=" + moveFile +
+                ", successFile=" + successFile +
+                ", failFile=" + failFile +
+                ", sdf=" + sdf +
+                ", sdfYear=" + sdfYear +
+                ", cyxSystem=" + cyxSystem +
+                ", cyxMetaFilm=" + cyxMetaFilm +
+                ", cyxFileImage=" + cyxFileImage +
+                ", cyxFileMainMedia=" + cyxFileMainMedia +
+                '}';
+    }
 }
