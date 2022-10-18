@@ -1,7 +1,10 @@
 package cn.han.number;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.BiFunction;
 
 /**
  * @Author han_s
@@ -10,6 +13,19 @@ import java.util.List;
  */
 public class NumberTest {
     public static void main(String[] args) {
+
+        Map<Integer,Long> map = new HashMap<>();
+        map.put(1, 3L);
+//        map.merge(1, 2L,Long::sum);
+        map.merge(1, 2L, new BiFunction<Long, Long, Long>() {
+            @Override
+            public Long apply(Long aLong, Long aLong2) {
+               return Long.sum(aLong, aLong2);
+            }
+        });
+        System.out.println(map.get(1));
+    }
+    public static void test5(){
         int hash = hash("key");
         int n1 = 16;
         int n2 = 32;
@@ -17,7 +33,6 @@ public class NumberTest {
         int i2 = (n2 - 1) & hash;
         System.out.println(i1);
         System.out.println(i2);
-
     }
     public static void test4(){
         //        List<Integer> numbers = new ArrayList<>();

@@ -25,6 +25,9 @@ public class AopDemo {
 
     @Test
     public void demoOne(){
+//        hanPointcuts.deleteOnly();
+        hanPointcuts.updateOnly();
+
         hanPointcuts.deleteOnly();
     }
 }

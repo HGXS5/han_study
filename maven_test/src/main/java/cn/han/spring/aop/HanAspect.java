@@ -26,6 +26,7 @@ public class HanAspect {
     public String update(ProceedingJoinPoint pjp){
         System.out.println("Around......");
         pjp.proceed();
+        System.out.println("执行完方法");
         return pjp.getKind();
     }
     @AfterReturning(pointcut = "execution(* cn.han.spring.aop.HanPointcuts.delete*(..))",returning = "s")

@@ -2,10 +2,11 @@ package cn.han.date;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * @Author han_s
@@ -14,7 +15,37 @@ import java.util.Locale;
  */
 public class DateDemo {
     public static void main(String[] args) {
-        test2();
+        test4();
+    }
+
+    public static void test4(){
+        /*间隔日期*/
+        List<String> dates = new ArrayList<>();
+
+        String startTime = "2019-12-30";
+        String endTime = "2020-01-03";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        LocalDate startDate = LocalDate.parse(startTime);
+        LocalDate endDate = LocalDate.parse(endTime);
+
+        Period next = Period.between(startDate,endDate);
+        int days = next.getDays();
+        dates.add(startTime);
+        while (days>0){
+            startDate = startDate.minusDays(-1);
+            String nextDate = formatter.format(startDate);
+            dates.add(nextDate);
+            days--;
+        }
+
+        System.out.println(dates.toString());
+    }
+    public static void test3(){
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String startTime = formatter.format(date);
+        System.out.println(startTime);
     }
     public void test1(){
         //        Long nowData = (new Date()).getTime();

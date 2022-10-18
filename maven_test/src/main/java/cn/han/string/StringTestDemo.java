@@ -1,5 +1,11 @@
 package cn.han.string;
 
+import org.hamcrest.core.Is;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiFunction;
+
 /**
  * @Author han_s
  * @Date 2022/8/4 10:35
@@ -34,11 +40,14 @@ public class StringTestDemo {
         int index = methodName.indexOf("get");
         String filedMe = methodName.substring(index+3).toLowerCase();
         System.out.println(filedMe);
+
+
     }
     public static void test3(){
         String videoUrl = "https://wasu-hls-test-input.obs.cn-east-2.myhuaweicloud.com/gxyk/89961649321688955";
         String urlNew = "https://itvdev.wasu.cn/wasu-zhjtsyb-ugc-east/";
         String urlOld = "https://wasu-hls-test-input.obs.cn-east-2.myhuaweicloud.com/";
+        BiFunction<Long, Long, Long> sum = Long::sum;
 
         if (videoUrl.contains(urlOld)) {
             StringBuffer sb = new StringBuffer();
@@ -49,6 +58,5 @@ public class StringTestDemo {
             System.out.println(sb.toString());
 
         }
-
     }
 }
