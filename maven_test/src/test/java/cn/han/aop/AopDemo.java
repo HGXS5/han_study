@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @ProName maven_test
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = HanConfig.class)
-@ContextConfiguration({"classpath:application-aop.xml"})
+@ContextConfiguration(classes = HanConfig.class)
+//@ContextConfiguration({"classpath:application-aop.xml"})
 public class AopDemo {
     @Autowired
     HanPointcuts hanPointcuts;

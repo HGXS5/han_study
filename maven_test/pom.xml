@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>maven_test</artifactId>
-<!--    <packaging>pom</packaging>-->
+    <!--    <packaging>pom</packaging>-->
     <version>1.0-SNAPSHOT</version>
 
 
@@ -49,11 +49,7 @@
             <version>2.4</version>
             <classifier>jdk15</classifier>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.6.1</version>
-        </dependency>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -95,29 +91,30 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-<!--            <scope>test</scope>-->
+            <!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>5.0.4.RELEASE</version>
-<!--            <scope>test</scope>-->
+            <version>5.3.6</version>
+            <!--            <scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>5.0.4.RELEASE</version>
+            <version>5.3.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.0.4.RELEASE</version>
+            <version>5.3.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>5.0.4.RELEASE</version>
+            <version>5.3.6</version>
+<!--            <version>5.0.4.RELEASE</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -129,11 +126,11 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.9.1</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework</groupId>-->
-<!--            <artifactId>spring-webmvc</artifactId>-->
-<!--            <version>5.0.4.RELEASE</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework</groupId>-->
+        <!--            <artifactId>spring-webmvc</artifactId>-->
+        <!--            <version>5.0.4.RELEASE</version>-->
+        <!--        </dependency>-->
         <!--rabbitmq依赖-->
         <dependency>
             <groupId>com.rabbitmq</groupId>
@@ -158,12 +155,17 @@
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
         </dependency>
-        <!--  mongodb      -->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
-            <version>1.13.0.RELEASE</version>
-        </dependency>
+        <!--       注释该依赖 NoClassDefFoundError: org/springframework/data/convert/CustomConversions-->
+<!--                <dependency>-->
+<!--                    <groupId>org.springframework.data</groupId>-->
+<!--                    <artifactId>spring-data-commons</artifactId>-->
+<!--                    <version>1.13.0.RELEASE</version>-->
+<!--                </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.data</groupId>-->
+        <!--            <artifactId>spring-data-mongodb</artifactId>-->
+        <!--            <version>1.10.0.RELEASE</version>-->
+        <!--        </dependency>-->
         <!--mysql-->
         <dependency>
             <groupId>mysql</groupId>
@@ -181,11 +183,7 @@
         <!--                </exclusion>-->
         <!--            </exclusions>-->
         <!--        </dependency>-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-            <version>1.10.0.RELEASE</version>
-        </dependency>
+
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
@@ -216,11 +214,58 @@
             <!--            <version>6.2.1</version>-->
             <version>6.2.4</version>
         </dependency>
+        <!--        定时框架quartz-->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
             <version>2.2.1</version>
         </dependency>
+        <!--        redis-->
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-redis</artifactId>
+            <version>5.5.9</version>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework</groupId>-->
+        <!--            <artifactId>spring-context</artifactId>-->
+        <!--            <version>5.3.14</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.8.0</version>
+        </dependency>
+<!--        objectMapper-->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
+<!--        redisson-->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.16.0</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>5.7.22</version>
+        </dependency>
+
     </dependencies>
 
     <build>

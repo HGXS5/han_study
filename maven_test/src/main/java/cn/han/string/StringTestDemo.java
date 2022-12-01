@@ -1,9 +1,18 @@
 package cn.han.string;
 
+import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.codec.digest.Md5Crypt;
 import org.hamcrest.core.Is;
+import org.springframework.util.DigestUtils;
+import sun.security.provider.MD5;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiFunction;
 
 /**
@@ -12,7 +21,53 @@ import java.util.function.BiFunction;
  * @ProName maven_test
  */
 public class StringTestDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        Map<String, Object> mapData = new HashMap<>();
+        mapData.put("han", 1);
+        mapData.put("test", "test");
+        String sign = createSign(mapData);
+        System.out.println(sign);
+        String toJSONString = JSONObject.toJSONString(mapData);
+        System.out.println(toJSONString);
+        String encodeData = encodeData(toJSONString, "utf-8");
+        System.out.println(encodeData);
+        String decode = URLDecoder.decode("%7B%22actId%22%3A%2255%22%2C%22userKey%22%3A%22xxx%22%2C%22token%22%3A%22xxx%22%7D", "utf-8");
+        System.out.println(decode);
+
+//        F691B767C2211982B77E1C3D96C3E46
+//        A20FEB5BC602AA8A7F689AB617FE60D9
+    }
+    public static String encodeData(String requestData, String enc) {
+        String encodeData = "";
+        try {
+            encodeData =  URLEncoder.encode(requestData,enc);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return encodeData;
+    }
+    public static String createSign(Map<String, Object> mapData) {
+
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("<").append("secret").append(">").append("<");
+
+        Set<Map.Entry<String, Object>> entries = mapData.entrySet();
+        Iterator<Map.Entry<String, Object>> iterator = entries.iterator();
+        StringBuffer inBuffer = new StringBuffer();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Object> entry = iterator.next();
+            inBuffer.append("<").append(entry.getKey()).append(">")
+                    .append("<").append(entry.getValue()).append(">");
+        }
+        System.out.println(inBuffer.toString());
+        buffer.append(inBuffer.toString());
+
+        buffer.append(">").append("<").append("secret").append(">");
+        System.out.println(buffer.toString());
+        return DigestUtils.md5DigestAsHex(buffer.toString().getBytes()).toUpperCase();
+    }
+
+    public static void test7(){
         String dat = "1,2,";
         int indexOf = dat.lastIndexOf(",");
         dat = dat.substring(0, indexOf);

@@ -15,7 +15,13 @@ import java.util.*;
  */
 public class DateDemo {
     public static void main(String[] args) {
-        test4();
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        System.out.println(formatter.format(now));
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        System.out.println(pattern.format(date));
+
     }
 
     public static void test4(){

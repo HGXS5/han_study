@@ -12,10 +12,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -26,6 +23,26 @@ import java.util.stream.Stream;
 public class DemoArray {
 
     public static void main(String[] args) throws IOException {
+        Map<HanModel,Integer> map = new HashMap();
+
+        map.put(new HanModel(1,"1",1), 2);
+        map.put(new HanModel(5,"5",5), 2);
+        map.put(new HanModel(3,"3",3), 2);
+        map.put(new HanModel(8,"8",8), 2);
+        Set<Map.Entry<HanModel, Integer>> entries = map.entrySet();
+
+        List<Map.Entry<HanModel,Integer>> list = new ArrayList(entries);
+        Collections.sort(list, new Comparator<Map.Entry<HanModel, Integer>>() {
+            @Override
+            public int compare(Map.Entry<HanModel, Integer> o1, Map.Entry<HanModel, Integer> o2) {
+                return o1.getKey().compareTo(o2.getKey());
+            }
+        });
+        System.out.println(list.toString());
+    }
+
+    public static void test9() {
+
         List<String> listIds = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             listIds.add(String.valueOf(i));
