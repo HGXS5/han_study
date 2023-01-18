@@ -9,8 +9,7 @@ public class CookieSessionDemo1 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    //session1
-        //需求1：将IP保存到session中
+    //session1        //需求1：将IP保存到session中
         //获取session
         HttpSession session = req.getSession();
         //获得IP
