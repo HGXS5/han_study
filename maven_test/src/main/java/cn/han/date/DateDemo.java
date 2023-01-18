@@ -1,5 +1,7 @@
 package cn.han.date;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
@@ -11,15 +13,52 @@ import java.util.*;
  * @ProName maven_test
  */
 public class DateDemo {
+    @Value("${redenvelope.start-time}")
+    String startTime;
+    @Value("${redenvelope.end-time}")
+    String endTime;
+    @Value("${redenvelope.every-day-start-time}")
+    String startDayTime;
+    @Value("${redenvelope.every-day-end-time}")
+    String endDayTime;
+    @Value("${redenvelope.status}")
+    String status;
+
     public static void main(String[] args) {
         /*LocalDateTime转换城date*/
         ZoneId zoneId = ZoneId.systemDefault();
         LocalDateTime now = LocalDateTime.now();
-        System.out.println("最初time:"+now);
+        System.out.println("最初time:" + now);
         ZonedDateTime zonedDateTime = now.atZone(zoneId);
         Instant instant = zonedDateTime.toInstant();
         Date from = Date.from(instant);
         System.out.println(from);
+
+        System.out.println(System.currentTimeMillis());
+        System.out.println(System.nanoTime());
+    }
+
+    public  void test7() {
+        Integer actStatus = Integer.valueOf(status);
+        /*获取当前时间*/
+        String timestamp = DateUtils.timestamp();
+        /*拼接：当天开始时间、当天结束时间*/
+        String[] times = timestamp.split(" ");
+        String timeformart = times[0];
+        String startDT = timeformart + " " + startDayTime;
+        String endDT = timeformart + " " + endDayTime;
+        /*得到long值毫秒时间*/
+        Long nowLongTime = DateUtils.toMillisecond(timestamp);
+        Long startDayLongTime = DateUtils.toMillisecond(startDT);
+        Long endDayLongTime = DateUtils.toMillisecond(endDT);
+        Long startLongTime = DateUtils.toMillisecond(startTime);
+        Long endLongTime = DateUtils.toMillisecond(endTime);
+
+        if (nowLongTime >= startLongTime && nowLongTime <= endLongTime) {
+            if (nowLongTime >= startDayLongTime && nowLongTime <= endDayLongTime) {
+                actStatus = 1;
+            }
+        }
     }
 
     public static void test6() {

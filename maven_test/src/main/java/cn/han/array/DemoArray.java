@@ -23,6 +23,13 @@ import java.util.stream.Stream;
 public class DemoArray {
 
     public static void main(String[] args) throws IOException {
+        int top = 0;
+        int[] ints = new int[]{
+                1,2,5,4,6,8,9,0,7,3
+        };
+        System.out.println(ints[++top]);
+    }
+    public static  void test10(){
         Map<HanModel,Integer> map = new HashMap();
 
         map.put(new HanModel(1,"1",1), 2);
@@ -40,7 +47,6 @@ public class DemoArray {
         });
         System.out.println(list.toString());
     }
-
     public static void test9() {
 
         List<String> listIds = new ArrayList<>();
