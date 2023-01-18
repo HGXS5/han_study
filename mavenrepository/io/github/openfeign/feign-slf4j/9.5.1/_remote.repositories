@@ -1,8 +1,0 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Feb 14 17:08:07 CST 2022
-feign-slf4j-9.5.1.jar>alimaven=
-feign-slf4j-9.5.1.jar>cse1=
-feign-slf4j-9.5.1.pom>cse1=
-feign-slf4j-9.5.1.pom>central=
-feign-slf4j-9.5.1.jar>central=
-feign-slf4j-9.5.1.pom>alimaven=

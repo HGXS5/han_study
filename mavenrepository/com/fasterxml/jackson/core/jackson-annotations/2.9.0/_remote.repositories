@@ -1,8 +1,0 @@
-#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Feb 14 17:08:07 CST 2022
-jackson-annotations-2.9.0.jar>central=
-jackson-annotations-2.9.0.pom>alimaven=
-jackson-annotations-2.9.0.pom>cse1=
-jackson-annotations-2.9.0.pom>central=
-jackson-annotations-2.9.0.jar>cse1=
-jackson-annotations-2.9.0.jar>alimaven=
